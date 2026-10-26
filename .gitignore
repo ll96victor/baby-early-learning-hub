@@ -1,0 +1,13 @@
+# 运行与临时产物
+.tmpfiles/
+node_modules/
+*.log
+
+# Claude Code 临时 worktree / plans
+.claude/
+
+# 修改前备份（只在本机保留，不入公开仓库）
+history/
+
+# 规划交接材料（含内部盘点过程，不作为站点内容发布）
+宝宝早教资源库-正式实施交接包/

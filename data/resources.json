@@ -1,0 +1,975 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "version": "1.0.0",
+    "repoUrl": "https://github.com/ll96victor/baby-early-learning-hub",
+    "pagesUrl": "https://ll96victor.github.io/baby-early-learning-hub/",
+    "siteName": {
+      "zh": "宝宝早教资源库",
+      "en": "Baby Early Learning Library"
+    },
+    "tagline": {
+      "zh": "0～3岁 · 家长精选",
+      "en": "Ages 0–3 · Parent curated"
+    },
+    "auditedAt": "2026-10-26",
+    "auditSource": "宝宝早教资源库-正式实施交接包/02-资源审计与实施规划.md",
+    "ageScope": {
+      "zh": "本资源库面向 0～3 岁家庭，不细分更小年龄段。是否适合当前孩子，请家长结合实际发展情况陪同选择。",
+      "en": "This library is for families with children aged 0–3 and does not use narrower age brackets. Parents should decide what suits each child and supervise play."
+    },
+    "evidenceNotice": {
+      "zh": "条目来自公开资料与单个家庭的真实反馈。页面标注的是证据状态，不是对所有孩子适用性的保证。",
+      "en": "Entries reflect public information and one family’s real experience. Labels describe evidence, not a guarantee that every child will enjoy or benefit from a resource."
+    },
+    "illustrationNotice": {
+      "zh": "站内插画为本站原创的通用分类示意图，不是游戏官方截图，也不代表授权素材。",
+      "en": "Illustrations are original generic placeholders created for this site. They are not official game artwork or licensed screenshots."
+    }
+  },
+  "taxonomy": {
+    "entryTypes": {
+      "play_web": {
+        "label": { "zh": "开始体验", "en": "Play on web" },
+        "description": {
+          "zh": "打开第三方官方网页活动。本站不托管内容，声音、广告与浏览器兼容性以实际设备为准。",
+          "en": "Opens the third-party official web activity. This site does not host it; audio, ads and browser compatibility depend on the real device."
+        }
+      },
+      "store": {
+        "label": { "zh": "查看商店", "en": "View store" },
+        "description": {
+          "zh": "打开官方应用商店页面，需要自行安装。本按钮不是网页版游戏入口。",
+          "en": "Opens the official app store page; installation is required. This is not a browser game entry."
+        }
+      },
+      "source": {
+        "label": { "zh": "查看项目", "en": "View project" },
+        "description": {
+          "zh": "打开开源项目源码页。通常需要在本地运行，不是直接在线游玩入口。",
+          "en": "Opens the open-source project page. It usually needs to be run locally and is not a direct online play entry."
+        }
+      },
+      "official_info": {
+        "label": { "zh": "查看官方页面", "en": "Official page" },
+        "description": {
+          "zh": "打开开发者官方页面，其中可能包含下载或试玩入口，需要自行确认实际可用性。",
+          "en": "Opens the developer’s official page, which may include download or play links. Verify availability yourself."
+        }
+      }
+    },
+    "verification": {
+      "family_tested": {
+        "label": { "zh": "家长实测", "en": "Family-tested" },
+        "description": {
+          "zh": "家长在实际设备上操作并记录了结果。仍属单个家庭体验，不代表普遍适用。",
+          "en": "A parent used it on a real device and recorded the result. This is still one family’s experience, not a general guarantee."
+        }
+      },
+      "agent_tested": {
+        "label": { "zh": "自动化测试", "en": "Automated test" },
+        "description": {
+          "zh": "自动化流程看到界面推进，不代表声音、完整玩法或儿童喜爱程度已经验证。",
+          "en": "Automation observed the interface progressing. It does not prove audio, complete gameplay or child engagement."
+        }
+      },
+      "developer_claimed": {
+        "label": { "zh": "开发者声明", "en": "Developer claim" },
+        "description": {
+          "zh": "仅依据开发者页面或项目 README 的说明，本站未独立复核。",
+          "en": "Based only on the developer page or project README; not independently checked by this site."
+        }
+      },
+      "pending": {
+        "label": { "zh": "待验证", "en": "Not yet verified" },
+        "description": {
+          "zh": "入口存在，但关键体验（声音、完整流程、安装等）尚未验证。",
+          "en": "The entry exists, but key experience such as audio, complete flow or installation is still unverified."
+        }
+      },
+      "issue_reported": {
+        "label": { "zh": "有异常记录", "en": "Issue reported" },
+        "description": {
+          "zh": "有加载、声音或其他异常反馈，详情以该条资源的验证记录为准。",
+          "en": "Loading, audio or other issues were reported. See the resource’s verification record for details."
+        }
+      }
+    },
+    "tiers": {
+      "featured": {
+        "label": { "zh": "精选", "en": "Featured" },
+        "description": {
+          "zh": "有本家庭明确的正面体验，放在首页前列；个体体验不代表对所有孩子都适用。",
+          "en": "This family reported a clearly positive experience, so it appears near the top. One family’s experience does not apply to every child."
+        }
+      },
+      "candidate": {
+        "label": { "zh": "待验证", "en": "Candidate" },
+        "description": {
+          "zh": "入口与资料存在，关键体验仍有未验证项。",
+          "en": "The entry and materials exist, but key experience remains unverified."
+        }
+      },
+      "watch": {
+        "label": { "zh": "观察", "en": "Watch" },
+        "description": {
+          "zh": "有年龄、音频或兴趣方面的边界，适合家长按需挑选，不进入主推。",
+          "en": "Has age, audio or engagement limits. Suitable for parents to choose selectively, not a priority recommendation."
+        }
+      }
+    },
+    "pricing": {
+      "developer_claimed_free": {
+        "label": { "zh": "开发者称免费", "en": "Developer says free" }
+      },
+      "free_unverified": {
+        "label": { "zh": "免费信息待核对", "en": "Free scope unverified" }
+      },
+      "unknown": {
+        "label": { "zh": "价格未确认", "en": "Pricing unknown" }
+      },
+      "paid": {
+        "label": { "zh": "付费", "en": "Paid" }
+      }
+    },
+    "platforms": {
+      "web": { "label": { "zh": "网页", "en": "Browser" } },
+      "windows": { "label": { "zh": "Windows 应用", "en": "Windows app" } }
+    },
+    "languages": {
+      "zh": { "label": { "zh": "中文", "en": "Mandarin" } },
+      "en": { "label": { "zh": "英文", "en": "English" } },
+      "zh-en": { "label": { "zh": "中英", "en": "Chinese & English" } },
+      "none": { "label": { "zh": "无语言要求", "en": "Language-free" } }
+    },
+    "familyPreferences": {
+      "liked": { "label": { "zh": "家庭喜欢", "en": "Family favorite" } },
+      "neutral": { "label": { "zh": "兴趣一般", "en": "Less engaging" } },
+      "unknown": { "label": { "zh": "未特别反馈", "en": "No specific feedback" } }
+    }
+  },
+  "categories": [
+    {
+      "id": "all",
+      "icon": "grid",
+      "name": { "zh": "全部资源", "en": "All resources" },
+      "description": { "zh": "全部 14 条资源，按精选分层排序。", "en": "All 14 resources, ordered by editorial tier." }
+    },
+    {
+      "id": "liked",
+      "icon": "heart",
+      "name": { "zh": "家庭实测喜欢", "en": "Family favorites" },
+      "description": {
+        "zh": "家长明确报告孩子喜欢的资源。来自单个家庭体验，不代表普遍适用。",
+        "en": "Resources this family’s child clearly enjoyed. This is one family’s experience, not a general recommendation."
+      }
+    },
+    {
+      "id": "chinese",
+      "icon": "speech",
+      "name": { "zh": "中文启蒙", "en": "Mandarin activities" },
+      "description": {
+        "zh": "有中文词汇、发音或童谣内容。界面语言与资源实际语言是两回事。",
+        "en": "Includes Chinese vocabulary, speech or songs. Interface language is separate from the resource’s actual language."
+      }
+    },
+    {
+      "id": "english",
+      "icon": "letters",
+      "name": { "zh": "英文启蒙", "en": "English exposure" },
+      "description": {
+        "zh": "有英文歌词或听说内容。当前仅收录 1 条观察库资源，不等同于英语课程。",
+        "en": "Includes English lyrics or listening content. Only one Watch-tier resource currently qualifies; this is not an English course."
+      }
+    },
+    {
+      "id": "music",
+      "icon": "music",
+      "name": { "zh": "音乐律动", "en": "Music & movement" },
+      "description": { "zh": "以音乐、节奏或身体律动为主。", "en": "Primarily music, rhythm or physical movement." }
+    },
+    {
+      "id": "keyboard",
+      "icon": "keyboard",
+      "name": { "zh": "随便敲键盘", "en": "Keyboard smashing" },
+      "description": {
+        "zh": "按键触发图案或声音的玩法，不优先推荐；注意区分可玩网页、官方页面和源码项目。",
+        "en": "Keyboard-triggered visuals or sounds. Not a priority recommendation; distinguish playable web pages, official pages and source projects."
+      }
+    },
+    {
+      "id": "animals",
+      "icon": "paw",
+      "name": { "zh": "动物认知", "en": "Animals" },
+      "description": { "zh": "以动物认知或动物角色为主。", "en": "Animal recognition or animal characters." }
+    },
+    {
+      "id": "art",
+      "icon": "palette",
+      "name": { "zh": "绘画创意", "en": "Art & creativity" },
+      "description": { "zh": "绘画、颜色、形状或创意操作。", "en": "Drawing, colours, shapes or creative play." }
+    },
+    {
+      "id": "sensory",
+      "icon": "sparkle",
+      "name": { "zh": "感官探索", "en": "Sensory discovery" },
+      "description": { "zh": "声音、动作与视觉反馈类的感官探索。", "en": "Sensory exploration through sound, movement and visual feedback." }
+    }
+  ],
+  "resources": [
+    {
+      "id": "lucas",
+      "name": { "zh": "Lucas Baby Games · 宝宝互动合集", "en": "Lucas Baby Games" },
+      "summary": {
+        "zh": "音乐、声音、宝宝电话和多种互动内容；家长确认孩子喜欢其中的角色舞蹈。",
+        "en": "Music, sounds, a baby phone and varied activities; this family’s child enjoys the dancing characters."
+      },
+      "categories": ["music", "sensory"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["windows"],
+      "entryType": "store",
+      "officialUrl": "https://apps.microsoft.com/detail/9p1hfcfzmqz0",
+      "playUrl": null,
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "商店页面可获取；内购与完整功能范围未核实。",
+          "en": "Available from the store page; in-app purchases and the full feature scope are unverified."
+        }
+      },
+      "verification": {
+        "status": "family_tested",
+        "device": { "zh": "家庭 Windows 电脑", "en": "Family Windows PC" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "家长确认本地应用有声音，孩子喜欢其中的角色舞蹈；完整功能范围与内购未重新核实。",
+          "en": "The parent confirmed local audio works and the child enjoys the dancing characters; the full feature scope and in-app purchases were not rechecked."
+        },
+        "issues": []
+      },
+      "familyPreference": "liked",
+      "tier": "featured",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同使用，以孩子当下的反应为准；不要把它当作适龄保证。",
+          "en": "Use with a parent and follow the child’s response; this is not an age-suitability guarantee."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🎹",
+        "accent": "🐣",
+        "theme": "linear-gradient(130deg,#e4f7dc,#e0eaff)"
+      },
+      "sourceEvidence": [
+        { "label": "Microsoft Store", "url": "https://apps.microsoft.com/detail/9p1hfcfzmqz0" }
+      ]
+    },
+    {
+      "id": "foxy",
+      "name": { "zh": "Foxy · 中文启蒙小天地", "en": "Foxy’s Little Learning Patch" },
+      "summary": {
+        "zh": "动物、水果和日常物品的简单互动；官网提供简体中文，语音取决于系统 TTS。",
+        "en": "Simple interaction with animals, fruit and everyday objects; Chinese text is available and speech depends on system TTS."
+      },
+      "categories": ["chinese", "animals"],
+      "contentLanguages": ["zh", "en"],
+      "learningFocus": { "zh": "简体中文词汇与发音", "en": "Simplified Chinese vocabulary and speech" },
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://wonghongwei.com/foxys-learning-patch/",
+      "playUrl": "https://wonghongwei.com/foxys-learning-patch/",
+      "demoUrl": null,
+      "pricing": {
+        "status": "developer_claimed_free",
+        "note": {
+          "zh": "开发者声明免费、无广告。",
+          "en": "The developer states it is free and ad-free."
+        }
+      },
+      "verification": {
+        "status": "issue_reported",
+        "device": { "zh": "家庭电脑浏览器", "en": "Family PC browser" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "官网声明免费、无广告并提供简体中文；语音依赖系统 TTS。家用电脑网页版曾出现无声，普通话发音未实测。",
+          "en": "The site says it is free, ad-free and offers Chinese text; speech uses system TTS. The family PC’s browser was silent before, and Mandarin pronunciation has not been tested."
+        },
+        "issues": [
+          { "zh": "家用电脑网页版曾出现无声", "en": "Web audio was silent on the family PC" },
+          { "zh": "普通话发音未实测", "en": "Mandarin pronunciation not tested" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": {
+          "zh": "官网主要面向 18 个月～3 岁（开发者说明）",
+          "en": "The developer describes the site as mainly for 18 months to 3 years"
+        },
+        "parentGuidance": {
+          "zh": "家长陪同，先确认设备语音是否正常；显示简体中文不等于普通话已正常播放。",
+          "en": "Use with a parent and check device audio first; Chinese text does not prove Mandarin audio works."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🦊",
+        "accent": "🍎",
+        "theme": "linear-gradient(130deg,#ffe8cd,#e4f3de)"
+      },
+      "sourceEvidence": [
+        { "label": "Developer website", "url": "https://wonghongwei.com/foxys-learning-patch/" }
+      ]
+    },
+    {
+      "id": "digital",
+      "name": { "zh": "Digital Dialects 中文动物卡片", "en": "Digital Dialects Chinese Animals" },
+      "summary": {
+        "zh": "点击动物卡片查看中文词语和发音；保存的是动物页直接入口。",
+        "en": "Animal flashcards with Chinese vocabulary and audio; this link points directly to the animals activity."
+      },
+      "categories": ["chinese", "animals"],
+      "contentLanguages": ["zh"],
+      "learningFocus": { "zh": "中文动物词汇与拼音发音", "en": "Chinese animal words with pinyin audio" },
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://www.digitaldialects.com/Chinese/Animals.htm",
+      "playUrl": "https://www.digitaldialects.com/Chinese/Animals.htm",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "页面出现过广告；免费范围未逐项核对。",
+          "en": "Ads were seen on the page; the free scope was not checked item by item."
+        }
+      },
+      "verification": {
+        "status": "issue_reported",
+        "device": { "zh": "家庭电脑浏览器", "en": "Family PC browser" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "动物页入口存在；官网把普通话拼音音频测试和简体字无声测试分开列出。原总入口曾加载失败，页面出现过广告；简体字与发音组合未实测。",
+          "en": "The animals entry exists. The site lists a Mandarin pinyin audio test and a silent simplified-character test separately. The original index failed to load, ads appeared, and the combined text-plus-audio experience was not tested."
+        },
+        "issues": [
+          { "zh": "原总入口曾加载失败", "en": "The original index failed to load" },
+          { "zh": "页面出现过广告", "en": "Ads appeared on the page" },
+          { "zh": "简体字与发音组合未实测", "en": "Simplified text plus audio was not tested together" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同，先试听再决定是否使用；不要把它当作已经验证的普通话课程。",
+          "en": "Use with a parent, preview the audio, and do not treat it as a verified Mandarin course."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🐼",
+        "accent": "🐘",
+        "theme": "linear-gradient(130deg,#e4f4e0,#fff1d8)"
+      },
+      "sourceEvidence": [
+        { "label": "Digital Dialects", "url": "https://www.digitaldialects.com/Chinese/Animals.htm" }
+      ]
+    },
+    {
+      "id": "daniel",
+      "name": { "zh": "Daniel Tiger 跳舞派对", "en": "Daniel Tiger Dance Party" },
+      "summary": {
+        "zh": "点击后看卡通角色跳舞，适合家长陪孩子一起模仿动作。",
+        "en": "Tap to see cartoon characters dance and copy their moves together."
+      },
+      "categories": ["music", "sensory"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://pbskids.org/games/play/dance-party/86157",
+      "playUrl": "https://pbskids.org/games/play/dance-party/86157",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官方网页可直接打开；是否需要账号或地区限制未核对。",
+          "en": "The official web page opens directly; account or regional restrictions were not checked."
+        }
+      },
+      "verification": {
+        "status": "issue_reported",
+        "device": { "zh": "家庭电脑浏览器", "en": "Family PC browser" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "PBS 官方 Play Game 入口存在；家长反馈部分网页活动无声，尚未逐项复核。",
+          "en": "The official PBS Play Game entry exists; the parent reported silent web activities, and this has not been checked item by item."
+        },
+        "issues": [
+          { "zh": "部分网页活动无声", "en": "Some web activities were silent" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同，先确认声音和页面加载，再决定是否继续。",
+          "en": "Use with a parent, check audio and page loading first, then decide whether to continue."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🐯",
+        "accent": "🎵",
+        "theme": "linear-gradient(130deg,#ffe1b7,#fce0ee)"
+      },
+      "sourceEvidence": [
+        { "label": "PBS KIDS", "url": "https://pbskids.org/games/play/dance-party/86157" }
+      ]
+    },
+    {
+      "id": "rhythm",
+      "name": { "zh": "Chrome Music Lab 节奏", "en": "Chrome Music Lab: Rhythm" },
+      "summary": {
+        "zh": "点节拍、听节奏变化；是音乐创作互动，不是角色跳舞。",
+        "en": "Tap beats and explore rhythm. This is a music-making interaction, not character dancing."
+      },
+      "categories": ["music", "sensory"],
+      "contentLanguages": ["none"],
+      "learningFocus": null,
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://musiclab.chromeexperiments.com/Rhythm/",
+      "playUrl": "https://musiclab.chromeexperiments.com/Rhythm/",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官方网页可直接打开；免费范围未逐项核对。",
+          "en": "The official web page opens directly; the free scope was not checked item by item."
+        }
+      },
+      "verification": {
+        "status": "issue_reported",
+        "device": { "zh": "家庭电脑浏览器", "en": "Family PC browser" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "官方说明可使用 Chrome 等浏览器；执行记录看到节奏控件可运行。家长反馈部分网页无声，浏览器兼容与音频待复核。",
+          "en": "The official site says Chrome and similar browsers work; automation saw the rhythm controls run. The parent reported silent web activities, so browser compatibility and audio need rechecking."
+        },
+        "issues": [
+          { "zh": "浏览器兼容待复核", "en": "Browser compatibility needs rechecking" },
+          { "zh": "音频待复核", "en": "Audio needs rechecking" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同；若浏览器提示不兼容，换用 Chrome 再试。",
+          "en": "Use with a parent; if the browser reports incompatibility, try Chrome."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🥁",
+        "accent": "🎶",
+        "theme": "linear-gradient(130deg,#e5dfff,#def5f7)"
+      },
+      "sourceEvidence": [
+        { "label": "Chrome Music Lab", "url": "https://musiclab.chromeexperiments.com/Rhythm/" }
+      ]
+    },
+    {
+      "id": "momo",
+      "name": { "zh": "Momo 中文童谣", "en": "Momo Chinese for Kids" },
+      "summary": {
+        "zh": "中文童谣和亲子跟唱内容；部分内容面向更大儿童。",
+        "en": "Mandarin songs and parent-child sing-along content; some material is intended for older children."
+      },
+      "categories": ["chinese", "music"],
+      "contentLanguages": ["zh"],
+      "learningFocus": { "zh": "中文童谣与识字", "en": "Mandarin songs and character recognition" },
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://www.momochinese.com/",
+      "playUrl": "https://www.momochinese.com/",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官网可打开；免费范围与是否需要账号未核对。",
+          "en": "The site opens; the free scope and whether an account is needed were not checked."
+        }
+      },
+      "verification": {
+        "status": "issue_reported",
+        "device": { "zh": "家庭电脑浏览器", "en": "Family PC browser" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "开发者明确定位 3～8 岁，包含童谣但以识字类内容为主；家长曾遇网页无声。适合家长挑选后陪同。",
+          "en": "The developer positions it for ages 3–8. It includes songs but focuses on character recognition; the parent encountered silent pages. Suitable only when a parent selects content."
+        },
+        "issues": [
+          { "zh": "开发者定位 3～8 岁", "en": "Developer positions it for ages 3–8" },
+          { "zh": "家长曾遇网页无声", "en": "The parent encountered a silent page" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "watch",
+      "ageEvidence": {
+        "providerClaim": { "zh": "开发者定位 3～8 岁", "en": "Developer positions it for ages 3–8" },
+        "parentGuidance": {
+          "zh": "只挑童谣类内容，家长陪同；不进入 0～3 岁主推。",
+          "en": "Choose only the song content and use with a parent; not a priority for the 0–3 age range."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🐻",
+        "accent": "🎼",
+        "theme": "linear-gradient(130deg,#fbe5f1,#e6f1ff)"
+      },
+      "sourceEvidence": [
+        { "label": "Momo Chinese", "url": "https://www.momochinese.com/" }
+      ]
+    },
+    {
+      "id": "alma",
+      "name": { "zh": "Alma 恐龙舞蹈", "en": "Alma Dino Dance Party" },
+      "summary": {
+        "zh": "和恐龙一起做舞蹈互动；完整舞蹈流程尚未验证。",
+        "en": "Dance with dinosaurs; the complete dance flow is still unverified."
+      },
+      "categories": ["music", "animals"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://pbskids.org/games/play/alma-dino-dance/1679815",
+      "playUrl": "https://pbskids.org/games/play/alma-dino-dance/1679815",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官方网页可直接打开；是否需要账号或地区限制未核对。",
+          "en": "The official web page opens directly; account or regional restrictions were not checked."
+        }
+      },
+      "verification": {
+        "status": "pending",
+        "device": { "zh": "自动化浏览器窗口", "en": "Automated browser window" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "官方入口存在；此前只确认页面和角色显示，未走通完整舞蹈流程。",
+          "en": "The official entry exists; only the page and characters were confirmed, and the complete dance flow was not completed."
+        },
+        "issues": [
+          { "zh": "完整舞蹈流程未验证", "en": "Complete dance flow not verified" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同尝试；若页面停滞，可换其他舞蹈类资源。",
+          "en": "Try with a parent; if the page stalls, choose another dance resource."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🦕",
+        "accent": "🎶",
+        "theme": "linear-gradient(130deg,#dcf2d7,#e2e9ff)"
+      },
+      "sourceEvidence": [
+        { "label": "PBS KIDS", "url": "https://pbskids.org/games/play/alma-dino-dance/1679815" }
+      ]
+    },
+    {
+      "id": "pink",
+      "name": { "zh": "Pinkalicious 舞蹈互动", "en": "Pinkalicious Dance Game" },
+      "summary": {
+        "zh": "跟随角色动作和音乐做简单律动，英文内容。",
+        "en": "Follow simple character movements and music; English content."
+      },
+      "categories": ["music", "sensory"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://pbskids.org/games/play/pinkalicious-dance-game/78525",
+      "playUrl": "https://pbskids.org/games/play/pinkalicious-dance-game/78525",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官方网页可直接打开；是否需要账号或地区限制未核对。",
+          "en": "The official web page opens directly; account or regional restrictions were not checked."
+        }
+      },
+      "verification": {
+        "status": "agent_tested",
+        "device": { "zh": "自动化浏览器窗口", "en": "Automated browser window" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "此前测试确认角色动画可推进；声音未独立确认。",
+          "en": "Earlier testing confirmed the character animation advances; audio was not independently confirmed."
+        },
+        "issues": [
+          { "zh": "声音未独立确认", "en": "Audio not independently confirmed" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同，先确认声音，再跟着角色做动作。",
+          "en": "Use with a parent, check audio first, then copy the character’s movements."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🩰",
+        "accent": "🌸",
+        "theme": "linear-gradient(130deg,#fae1f6,#e8e4fd)"
+      },
+      "sourceEvidence": [
+        { "label": "PBS KIDS", "url": "https://pbskids.org/games/play/pinkalicious-dance-game/78525" }
+      ]
+    },
+    {
+      "id": "garden",
+      "name": { "zh": "Pinkamusical 音乐花园", "en": "Pinkamusical Garden" },
+      "summary": {
+        "zh": "点击花园中的元素，探索动画、声音和节奏。",
+        "en": "Explore animation, sound and rhythm by tapping elements in a garden."
+      },
+      "categories": ["music", "art", "sensory"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://pbskids.org/games/play/pinkamusical-garden/128160",
+      "playUrl": "https://pbskids.org/games/play/pinkamusical-garden/128160",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "官方网页可直接打开；是否需要账号或地区限制未核对。",
+          "en": "The official web page opens directly; account or regional restrictions were not checked."
+        }
+      },
+      "verification": {
+        "status": "agent_tested",
+        "device": { "zh": "自动化浏览器窗口", "en": "Automated browser window" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "此前画面和种花操作通过；声音未独立确认。",
+          "en": "The visuals and planting interaction worked in earlier testing; audio was not independently confirmed."
+        },
+        "issues": [
+          { "zh": "声音未独立确认", "en": "Audio not independently confirmed" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长陪同，把点击和声音当作探索，不追求完成度。",
+          "en": "Use with a parent and treat tapping and sound as exploration, not a task to complete."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🌼",
+        "accent": "🎶",
+        "theme": "linear-gradient(130deg,#fbf2ce,#dff1e8)"
+      },
+      "sourceEvidence": [
+        { "label": "PBS KIDS", "url": "https://pbskids.org/games/play/pinkamusical-garden/128160" }
+      ]
+    },
+    {
+      "id": "tiny",
+      "name": { "zh": "Tiny Dino 恐龙儿歌", "en": "Tiny Dino" },
+      "summary": {
+        "zh": "卡通恐龙配合英文歌曲做动作，屏幕显示歌词，适合亲子模仿。",
+        "en": "A cartoon dinosaur moves to English songs with on-screen lyrics, inviting parents and children to join in."
+      },
+      "categories": ["music", "animals", "english"],
+      "contentLanguages": ["en"],
+      "learningFocus": { "zh": "英文歌词跟唱", "en": "English sing-along lyrics" },
+      "platforms": ["web"],
+      "entryType": "play_web",
+      "officialUrl": "https://kids-storybook.com/games/tiny-dino",
+      "playUrl": "https://kids-storybook.com/games/tiny-dino",
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "网页可打开；免费范围与广告情况未核对。",
+          "en": "The page opens; the free scope and advertising were not checked."
+        }
+      },
+      "verification": {
+        "status": "agent_tested",
+        "device": { "zh": "自动化浏览器窗口", "en": "Automated browser window" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "执行记录看到歌词和动画推进；网站标注 3～8 岁，开发者称幼儿可陪玩；家庭网页音频待确认。",
+          "en": "Automation saw lyrics and animation progress. The site labels it for ages 3–8, while the developer says younger children can join with a parent; home audio is still unconfirmed."
+        },
+        "issues": [
+          { "zh": "网站标称 3～8 岁", "en": "The site labels it for ages 3–8" },
+          { "zh": "家庭网页音频待确认", "en": "Home web audio is unconfirmed" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "watch",
+      "ageEvidence": {
+        "providerClaim": {
+          "zh": "网站标注 3～8 岁；开发者称幼儿可陪玩",
+          "en": "The site labels it for ages 3–8; the developer says younger children can join with a parent"
+        },
+        "parentGuidance": {
+          "zh": "作为英文儿歌跟唱使用，家长陪同；因官方标称年龄偏大，不进入主推。",
+          "en": "Use as English sing-along with a parent; because the official age label is older, it is not a priority recommendation."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🦖",
+        "accent": "🎵",
+        "theme": "linear-gradient(130deg,#cef5de,#fff2c8)"
+      },
+      "sourceEvidence": [
+        { "label": "Kids Storybook", "url": "https://kids-storybook.com/games/tiny-dino" }
+      ]
+    },
+    {
+      "id": "smash",
+      "name": { "zh": "BabySmash · 随便敲键盘", "en": "BabySmash" },
+      "summary": {
+        "zh": "任意按键触发形状和声音；家长表示孩子对这类玩法兴趣一般。",
+        "en": "Any key press triggers shapes and sounds; this family’s child was not very engaged by this type of play."
+      },
+      "categories": ["keyboard"],
+      "contentLanguages": ["none"],
+      "learningFocus": null,
+      "platforms": ["windows"],
+      "entryType": "official_info",
+      "officialUrl": "https://www.babysmash.com/",
+      "playUrl": null,
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "开发者站点提供 Windows 下载与 Play now 入口；付费范围未核实。",
+          "en": "The developer site offers a Windows download and Play now entry; the paid scope is unverified."
+        }
+      },
+      "verification": {
+        "status": "family_tested",
+        "device": { "zh": "家庭 Windows 电脑", "en": "Family Windows PC" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "家长明确表示这类玩法兴趣一般；官方站点提供 Windows 下载与 Play now 入口。",
+          "en": "The parent said this type of play was not very engaging; the official site offers a Windows download and a Play now entry."
+        },
+        "issues": [
+          { "zh": "本家庭兴趣一般", "en": "Less engaging for this family" }
+        ]
+      },
+      "familyPreference": "neutral",
+      "tier": "watch",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "仅在孩子对键盘反馈感兴趣时尝试，不作为首推；页面按钮不是直接在线游玩入口。",
+          "en": "Try only if the child enjoys keyboard feedback; not a priority. The page button is not a direct online play entry."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "⌨️",
+        "accent": "✨",
+        "theme": "linear-gradient(130deg,#e7e6fb,#fae7cf)"
+      },
+      "sourceEvidence": [
+        { "label": "BabySmash", "url": "https://www.babysmash.com/" }
+      ]
+    },
+    {
+      "id": "keyboardsmash",
+      "name": { "zh": "Kids Keyboard Smash · 随便敲键盘", "en": "Kids Keyboard Smash" },
+      "summary": {
+        "zh": "随手敲键触发彩色画面与反馈；仓库提供 index.html 和 Windows 启动脚本。",
+        "en": "Colourful keyboard-triggered effects; the repository provides index.html and a Windows launch script."
+      },
+      "categories": ["keyboard"],
+      "contentLanguages": ["none"],
+      "learningFocus": null,
+      "platforms": ["windows"],
+      "entryType": "source",
+      "officialUrl": "https://github.com/mazelb/kids-keyboard-smash",
+      "playUrl": null,
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "开源仓库，README 声明项目可用；未核对许可证与当前版本。",
+          "en": "Open-source repository; the README describes the project. The licence and current release were not checked."
+        }
+      },
+      "verification": {
+        "status": "pending",
+        "device": { "zh": "未在本轮设备测试", "en": "Not tested on this round’s devices" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "GitHub README 给出 index.html 与 Windows 启动脚本；AutoHotkey 属可选辅助依赖。仓库链接不是游戏直达，当前版本、声音和安装方式未重新核实。",
+          "en": "The GitHub README provides index.html and a Windows launch script; AutoHotkey is an optional helper. The repository is not a direct game link, and the current release, audio and installation were not rechecked."
+        },
+        "issues": [
+          { "zh": "需要本地运行", "en": "Must be run locally" },
+          { "zh": "当前版本未复核", "en": "Current release not rechecked" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长按 README 在本地运行；不要把它当成可直接在线玩的网页。",
+          "en": "Run it locally following the README; do not treat it as a directly playable web page."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🎹",
+        "accent": "✨",
+        "theme": "linear-gradient(130deg,#dff4f1,#f3e7ff)"
+      },
+      "sourceEvidence": [
+        { "label": "GitHub", "url": "https://github.com/mazelb/kids-keyboard-smash" }
+      ]
+    },
+    {
+      "id": "keysplash",
+      "name": { "zh": "KeySplash / TinyFingers · 随便敲键盘", "en": "KeySplash / TinyFingers" },
+      "summary": {
+        "zh": "键盘触发图案和小动画；README 声明单文件 HTML、可离线打开。",
+        "en": "Keyboard-triggered patterns and small animations; the README says it is a single HTML file that can open offline."
+      },
+      "categories": ["keyboard"],
+      "contentLanguages": ["none"],
+      "learningFocus": null,
+      "platforms": ["web", "windows"],
+      "entryType": "source",
+      "officialUrl": "https://github.com/smartexpert/tinyfingers",
+      "playUrl": null,
+      "demoUrl": null,
+      "pricing": {
+        "status": "developer_claimed_free",
+        "note": {
+          "zh": "README 声明单文件 HTML、可离线打开；许可证与在线演示入口未核对。",
+          "en": "The README says it is a single HTML file that works offline; the licence and online demo entry were not checked."
+        }
+      },
+      "verification": {
+        "status": "pending",
+        "device": { "zh": "未在本轮设备测试", "en": "Not tested on this round’s devices" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "README 声明单文件 HTML、可离线直接打开；官网或在线演示直达入口仍需校验。链接指向源码仓库，不保证直接在线游玩。",
+          "en": "The README says it is a single HTML file that can open offline. A direct official or online demo entry still needs checking. The link points to source code, not a guaranteed online game."
+        },
+        "issues": [
+          { "zh": "在线演示入口未校验", "en": "Online demo entry not checked" },
+          { "zh": "需要本地打开或下载", "en": "Needs local opening or download" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "可下载后本地打开；在线版是否可用需家长自行确认。",
+          "en": "Download and open locally; parents should confirm whether an online version works."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🌈",
+        "accent": "⌨️",
+        "theme": "linear-gradient(130deg,#faf0d2,#deedff)"
+      },
+      "sourceEvidence": [
+        { "label": "GitHub", "url": "https://github.com/smartexpert/tinyfingers" }
+      ]
+    },
+    {
+      "id": "colors",
+      "name": { "zh": "Colors & Shapes 颜色形状", "en": "Colors & Shapes" },
+      "summary": {
+        "zh": "涂色、颜色和形状互动；属于待评估的 Windows 候选。",
+        "en": "Colouring, colour and shape activities; a Windows candidate awaiting hands-on review."
+      },
+      "categories": ["art", "sensory"],
+      "contentLanguages": ["en"],
+      "learningFocus": null,
+      "platforms": ["windows"],
+      "entryType": "store",
+      "officialUrl": "https://apps.microsoft.com/detail/9nl6tnmj5sjs",
+      "playUrl": null,
+      "demoUrl": null,
+      "pricing": {
+        "status": "free_unverified",
+        "note": {
+          "zh": "商品页存在；免费范围、内购和适龄未核实。",
+          "en": "The store listing exists; the free scope, in-app purchases and age suitability are unverified."
+        }
+      },
+      "verification": {
+        "status": "pending",
+        "device": { "zh": "未在本轮设备测试", "en": "Not tested on this round’s devices" },
+        "checkedAt": "2026-10-26",
+        "observations": {
+          "zh": "仅确认微软商店商品页存在；安装、适龄和实际功能未实测。",
+          "en": "Only the Microsoft Store listing was confirmed; installation, age suitability and actual features were not tested."
+        },
+        "issues": [
+          { "zh": "安装与实际功能未实测", "en": "Installation and features not tested" }
+        ]
+      },
+      "familyPreference": "unknown",
+      "tier": "candidate",
+      "ageEvidence": {
+        "providerClaim": null,
+        "parentGuidance": {
+          "zh": "家长先查看商店适龄说明，再决定是否安装。",
+          "en": "Parents should check the store’s age information before installing."
+        }
+      },
+      "media": {
+        "type": "original-illustration",
+        "emoji": "🎨",
+        "accent": "🔷",
+        "theme": "linear-gradient(130deg,#ffe4d2,#e5e5fc)"
+      },
+      "sourceEvidence": [
+        { "label": "Microsoft Store", "url": "https://apps.microsoft.com/detail/9nl6tnmj5sjs" }
+      ]
+    }
+  ]
+}

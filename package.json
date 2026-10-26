@@ -1,0 +1,16 @@
+{
+  "name": "baby-early-learning-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "面向 0～3 岁家庭的静态早教资源导航，数据驱动，双语界面。",
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "test": "node --test",
+    "sync-readme": "node tools/sync-readme.mjs",
+    "check": "node tools/validate.mjs && node --test && node tools/sync-readme.mjs --check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

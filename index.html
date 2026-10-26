@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#24886d" />
+<meta name="description" content="面向 0～3 岁家庭的早教互动资源导航：14 条真实入口、双语说明、验证状态与家庭反馈。" />
+<title>宝宝早教资源库 · 0～3岁家长精选</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='4' y='4' width='20' height='20' rx='7' fill='%2367C8A1'/%3E%3Cpath d='m8 14 6-6 6 6-6 6z' fill='white'/%3E%3Ccircle cx='14' cy='14' r='2.1' fill='%23F9CD87'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#cards">跳到资源列表</a>
+<header class="site-head">
+  <div class="header-inner">
+    <a class="brand" href="#resources" aria-label="宝宝早教资源库">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="7" fill="#67C8A1"/><path d="m8 14 6-6 6 6-6 6z" fill="white"/><circle cx="14" cy="14" r="2.1" fill="#F9CD87"/></svg>
+      </span>
+      <span class="brand-copy">
+        <b data-i18n="brand">宝宝早教资源库</b>
+        <small data-i18n="brandSub">0～3岁 · 家长精选</small>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="站点导航">
+      <a href="#resources" class="active" data-i18n="navResources">资源库</a>
+      <button type="button" data-modal="curation" data-i18n="navGuide">收录说明</button>
+      <button type="button" data-modal="about" data-i18n="navAbout">关于本站</button>
+    </nav>
+    <div class="language" role="group" aria-label="界面语言">
+      <button type="button" id="zhSwitch" class="active" aria-pressed="true">简中</button>
+      <button type="button" id="enSwitch" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+<div class="shell app" id="resources">
+  <aside class="sidebar" id="sidebar" aria-label="分类和筛选">
+    <div class="side-head">
+      <span data-i18n="sideCategory">资源分类</span>
+      <span class="side-mark" aria-hidden="true">✦</span>
+      <button class="drawer-close" id="closeDrawer" type="button" aria-label="关闭筛选">×</button>
+    </div>
+    <div class="cat-options" id="categories"></div>
+    <div class="side-title" data-i18n="sideFilter">进一步筛选</div>
+    <div class="filter-form">
+      <label class="filter-label" for="platform" data-i18n="platformLabel">使用平台</label>
+      <select class="field-select" id="platform"></select>
+      <label class="filter-label" for="language" data-i18n="languageLabel">资源语言</label>
+      <select class="field-select" id="language"></select>
+      <label class="filter-label" for="verification" data-i18n="verificationLabel">验证状态</label>
+      <select class="field-select" id="verification"></select>
+    </div>
+    <div class="side-note">
+      <strong data-i18n="ageNoteTitle">👶 关于适用年龄</strong>
+      <p data-i18n="ageNoteBody">本资源库面向 0～3 岁家庭，不细分更小年龄段。资源是否适合当前孩子，请家长结合实际发展情况陪同选择。</p>
+      <button type="button" class="text-link" data-modal="curation" data-i18n="statusHelp">状态标签怎么看</button>
+    </div>
+    <div class="side-links">
+      <button type="button" class="text-link" data-modal="curation" data-i18n="navGuide">收录说明</button>
+      <button type="button" class="text-link" data-modal="about" data-i18n="navAbout">关于本站</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <section class="intro">
+      <div class="intro-copy">
+        <h1 data-i18n="headline">为宝宝精选互动早教资源</h1>
+        <p data-i18n="introBody">0～3 岁家庭的早教资源目录。Lucas 优先，中文资源靠前，并如实记录声音、加载与验证状态。</p>
+      </div>
+      <div class="intro-stat">
+        <strong id="allCount">14</strong>
+        <small data-i18n="resourceCount">条资源 · 三个分层</small>
+      </div>
+    </section>
+
+    <div class="mobile-only-cats" id="mobileCategories" aria-label="资源分类"></div>
+
+    <div class="toolbar">
+      <label class="search-wrap" for="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <input type="search" id="search" autocomplete="off" placeholder="搜索中文儿歌、Lucas、随便敲键盘…" />
+        <button class="clear-search" type="button" id="clearSearch" aria-label="清除搜索">×</button>
+      </label>
+      <button class="mobile-filter" id="openDrawer" type="button" aria-expanded="false" aria-controls="sidebar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>
+        <span data-i18n="filterButton">筛选</span>
+      </button>
+      <button class="ghost-btn" id="resetTop" type="button" data-i18n="reset">清除筛选</button>
+    </div>
+
+    <div class="result-heading">
+      <div class="result-copy">
+        <h2><span id="resultTitle" data-i18n="resultTitle">精选互动资源</span> <small id="resultCount">共 14 条</small></h2>
+        <p class="category-hint" id="categoryHint" hidden></p>
+      </div>
+      <div class="list-actions">
+        <label class="sr-only" for="sort" data-i18n="sortLabel">排序方式</label>
+        <select class="field-select sort-select" id="sort"></select>
+        <div class="view-switch" role="group" aria-label="切换展示方式">
+          <button id="listView" class="active" type="button" aria-label="列表视图" aria-pressed="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <button id="gridView" type="button" aria-label="宫格视图" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="active-filters" id="activeFilters"></div>
+    <div class="resource-list" id="cards" aria-live="polite">
+      <div class="state-box"><span class="spinner" aria-hidden="true"></span><p data-i18n="loading">正在读取资源数据…</p></div>
+    </div>
+
+    <footer class="footer">
+      <p id="footerMeta">资源核查日期 2026-10-26 · 插画为原创占位图 · 本站不托管第三方游戏</p>
+      <p><a id="repoLink" href="https://github.com/ll96victor/baby-early-learning-hub" target="_blank" rel="noopener noreferrer">GitHub 仓库与收录标准</a></p>
+    </footer>
+  </main>
+</div>
+
+<dialog id="detailDialog" class="dialog" aria-labelledby="detailHeading">
+  <div class="modal-header">
+    <strong data-i18n="detailTitle">资源详情</strong>
+    <button type="button" class="close" id="closeDialog" aria-label="关闭">×</button>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+</dialog>
+
+<noscript>
+  <div class="noscript">本站需要启用 JavaScript 才能读取资源数据。</div>
+</noscript>
+<script type="module" src="./assets/app.js"></script>
+</body>
+</html>
